@@ -26,6 +26,10 @@ dependencies {
     implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.13.0'
     // https://mavenlibs.com/maven/dependency/io.cucumber/cucumber-junit
     testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.13.0'
+    // https://mavenlibs.com/maven/dependency/io.github.bonigarcia/webdrivermanager
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.5.2'
+    // https://mavenlibs.com/maven/dependency/org.slf4j/slf4j-simple
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.7'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -34,3 +38,8 @@ java {
         languageVersion = JavaLanguageVersion.of(21)
     }
 }
+
+tasks.named('test'){
+    systemProperty "cucumber.options", System.getProperty("cucumber.options")
+}
+
