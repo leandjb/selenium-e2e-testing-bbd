@@ -11,3 +11,4 @@ plugins {
 }
 
 rootProject.name = 'selenium-e2e-testing-bbd'
+include('app')
